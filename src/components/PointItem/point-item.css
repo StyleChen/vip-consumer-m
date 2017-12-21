@@ -1,0 +1,75 @@
+@import 'styles/vars.css';
+
+:root {
+  --pic-size: calc(130 / 32 * 1em);
+  --item-padding: calc(20 / 32 * 1em);
+}
+
+.item {
+  position: relative;
+  display: flex;
+  padding: var(--item-padding);
+  overflow: hidden;
+  font-size: 1rem;
+}
+
+.item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: var(--item-padding);
+  width: 100%;
+  height: 1px;
+  background-color: var(--grey-lightest);
+}
+
+/* 图片 */
+.pic {
+  width: var(--pic-size);
+  height: var(--pic-size);
+}
+
+/* 内容 */
+.content {
+  flex: 1;
+  min-width: 0;
+  margin-left: calc(20 / 24 * 1em);
+  color: var(--grey-lighter);
+  font-size: calc(24 / 32 * 1em);
+  line-height: calc(36 / 24);
+}
+
+.title {
+  @apply --ellipsis;
+
+  margin: 0;
+  color: #333;
+  font-size: calc(30 / 24 * 1em);
+  font-weight: normal;
+  line-height: calc(40 / 30);
+}
+
+.title-hot {
+  composes: title;
+}
+
+.title-hot::after {
+  display: inline-block;
+  content: 'hot';
+  width: calc(50 / 20 * 1em);
+  height: calc(24 / 20 * 1em);
+  line-height: calc(24 / 20 * 1em);
+  margin-left: calc(10 / 20 * 1em);
+  text-align: center;
+  border-radius: calc(5 / 20 * 1em);
+  font-size: calc(20 / 30 * 1em);
+  background: linear-gradient(to right, #fd7d55, #f94053);
+  color: #fff;
+}
+
+/* 状态 */
+.state {
+  color: var(--theme);
+  font-size: calc(24 / 32 * 1em);
+  line-height: calc(40 / 24);
+}

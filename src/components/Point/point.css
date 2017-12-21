@@ -1,0 +1,62 @@
+@import 'styles/vars.css';
+
+.current-point {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(170 / 32 * 1em);
+  background-image: url(./int_bg@2x.png);
+  color: #fff;
+  overflow: hidden;
+}
+
+.current-point::before {
+  position: absolute;
+  top: -calc(160 / 32 * 1em);
+  right: -calc(360 / 32 * 1em);
+  display: inline-block;
+  content: '';
+  width: calc(360 * 2 / 32 * 1em);
+  height: calc(144 * 2 / 32 * 1em);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 5px 0 rgba(244, 31, 35, 0.5);
+}
+
+.current-point::after {
+  position: absolute;
+  bottom: -calc(232 / 32 * 1em);
+  right: -calc(550 / 32 * 1em);
+  display: inline-block;
+  content: '';
+  width: calc(550 * 2 / 32 * 1em);
+  height: calc(200 * 2 / 32 * 1em);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 5px 0 rgba(244, 31, 35, 0.5);
+}
+
+@supports (clip-path: ellipse(calc(360 / 32 * 1em) calc(144 / 32 * 1em) at 50% 50%)) {
+  .current-point::before {
+    border-radius: 0;
+    clip-path: ellipse(calc(360 / 32 * 1em) calc(144 / 32 * 1em) at 50% 50%);
+  }
+
+  .current-point::after {
+    border-radius: 0;
+    clip-path: ellipse(calc(550 / 32 * 1em) calc(200 / 32 * 1em) at 50% 50%);
+  }
+}
+
+.number {
+  text-align: center;
+  text-shadow: 0 2px #d6000f;/* 这里的阴影效果为UI后面提供 */
+  font-size: calc(60 / 32 * 1em);
+}
+
+.text {
+  margin-top: calc(20 / 24 * 1em);/* 这里的值为UI后面提供 */
+  text-align: center;
+  font-size: calc(24 / 32 * 1em);
+}

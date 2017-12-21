@@ -1,0 +1,32 @@
+:root {
+  --theme: #ec5e1c;
+  --theme-light: #ec2c37;
+  --grey: #666;
+  --grey-lighter: #999;
+  --grey-lightest: #eee;
+  --grey-title: #cbcbcb;
+  --grey-bg: #f2f2f2;
+  --dark: #333;
+
+  --flex-center: {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  --ellipsis: {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  --unstyle-list: {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  --pos-center: {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

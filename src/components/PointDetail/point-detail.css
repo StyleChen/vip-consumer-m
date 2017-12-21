@@ -1,0 +1,123 @@
+@import 'styles/vars.css';
+
+.detail {
+  padding: calc(30 / 24 * 1em) calc(20 / 24 * 1em) calc(20 / 24 * 1em);
+  font-size: calc(24 / 32 * 1rem);
+  background-color: #fff;
+}
+
+:global(.slick-dots) {
+  position: static;
+}
+
+:global(.slick-dots li) {
+  margin: 0;
+}
+
+:global(.slick-dots li button::before) {
+  color: #eee;
+  opacity: 1;
+}
+
+:global(.slick-dots li.slick-active button::before) {
+  color: #c4c4c4;
+}
+
+.img-box {
+  display: flex !important;
+  justify-content: center;
+}
+
+.img-box-img {
+  width: calc(180 / 24 * 1em);
+  height: calc(180 / 24 * 1em);
+  object-fit: contain;
+  object-position: center;
+}
+
+.title {
+  margin: 0;
+  margin-top: calc(10 / 28 * 1em);
+  line-height: calc(48 / 28 * 1em);
+  text-align: center;
+  font-size: calc(28 / 24 * 1em);
+  font-weight: normal;
+}
+
+.number {
+  text-align: center;
+  color: var(--theme);
+  line-height: calc(46 / 24 * 1em);
+}
+
+.big {
+  font-size: calc(32 / 24 * 1em);
+}
+
+/* 商品介绍 */
+.info {
+  margin-top: calc(16 / 28 * 1em);
+  margin-bottom: calc(110 / 28 * 1em);
+  padding: calc(20 / 28 * 1em);
+  font-size: calc(28 / 32 * 1rem);
+  background-color: #fff;
+}
+
+.info-title {
+  margin: 0;
+  padding-left: calc(16 / 28 * 1em);
+  line-height: calc(50 / 28 * 1em);
+  font-weight: normal;
+  position: relative;
+}
+
+.info-title::before {
+  position: absolute;
+  left: 0;
+  top: calc(13 / 28 * 1em);
+  display: inline-block;
+  content: '';
+  width: calc(6 / 28 * 1em);
+  height: calc(24 / 28 * 1em);
+  background-color: var(--theme);
+}
+
+.info-title::after {
+  position: absolute;
+  right: 0;
+  top: calc(24 / 28 * 1em);
+  display: inline-block;
+  content: '';
+  width: calc(100% - 5em);
+  height: calc(2 / 28 * 1em);
+  border-bottom: calc(2 / 28 * 1em) dashed var(--grey-lightest);
+}
+
+.input {
+  padding: calc(20 / 28 * 1em) calc(20 / 28 * 1em);
+}
+
+.input p {
+  margin: 0;
+  line-height: calc(44 / 28 * 1em);
+  text-indent: 2em;
+}
+
+.input img {
+  display: block;
+  width: calc(540 / 28 * 1em);
+  height: calc(360 / 28 * 1em);
+  margin: calc(20 / 28 * 1em) auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.bottom {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-bottom: calc(10 / 32 * 1em);
+  background-color: #fff;
+  box-shadow: 0 -calc(4 / 32 * 1em) rgba(125, 125, 125, 0.05);
+}

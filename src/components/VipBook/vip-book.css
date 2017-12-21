@@ -1,0 +1,122 @@
+@import "styles/vars.css";
+
+/* 第一页 */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.book-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: calc(10 / 32 * 1em);
+  border-bottom: 1px  solid  var(--grey-bg);
+  color: var(--grey-lighter);
+  background: white;
+}
+
+.search-wrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-radius: 50px;
+  background: var(--grey-bg);
+  padding: 0 calc(15 / 32 * 1em);
+}
+
+.search {
+  padding: 0 calc(20 / 32 * 1em);
+  color: var(--theme);
+}
+
+.search-input {
+  width: 100%;
+  height: calc(54 / 26 * 1em);
+  margin-left: calc(10 / 26 * 1em);
+  border: 0;
+  font-size: calc(26 / 32 * 1em);
+  background: transparent;
+  color: inherit;
+}
+
+.result {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.number-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0.5em;
+}
+
+.phone-number {
+  flex-basis: 45.5%;
+  padding: 1em 0;
+  margin: 0.5em;
+  border: 1px solid var(--grey-lighter);
+  border-radius: 5px;
+  background-color: white;
+  text-align: center;
+}
+
+.phone-number.selected {
+  border-color: var(--theme);
+  color: var(--theme);
+}
+
+.foot-btn {
+  display: flex;
+  border-top: 1px solid var(--grey-lighter);
+  background-color: white;
+}
+
+.foot-btn > button {
+  flex: 1;
+  text-align: center;
+  padding: 1em 0;
+  margin: 0.4em;
+  border-radius: 5px;
+}
+
+.foot-btn > button:first-child {
+  background-color: white;
+  border: 1px solid var(--theme);
+  color: var(--theme);
+}
+
+.foot-btn > button:last-child {
+  background-color: var(--theme);
+  color: white;
+  border: none;
+}
+
+/* 第二页 */
+.helpful-hints {
+  margin: 1em;
+  font-size: calc(28 / 32 * 1em);
+  color: var(--grey-lighter);
+}
+
+/* 第三页 */
+
+.big-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2em 0;
+  font-size: calc(32 / 32 * 1em);
+  font-weight: 400;
+  color: var(--grey);
+}
+
+.big-title > .icon {
+  fill: #72C541;
+  margin-right: 0.5em;
+  transform: scale(1.5);
+}

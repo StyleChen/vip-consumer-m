@@ -1,0 +1,58 @@
+@import 'styles/vars.css';
+
+.list {
+  @apply --unstyle-list;
+
+  margin-top: calc(16 / 32 * 1em);
+  padding: calc(30 / 32 * 1em);
+  padding-left: calc(70 / 32 * 1em);
+  background-color: #fff;
+  color: var(--grey-lighter);
+}
+
+.item {
+  position: relative;
+  padding-bottom: calc(36 / 32 * 1em);
+}
+
+.item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: calc(-30 / 32 * 1em);
+  width: 1px;
+  height: 100%;
+  background-color: var(--grey-lightest);
+}
+
+.item::after {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: calc(-30 / 32 * 1em);
+  transform: translate(-50%, -50%);
+  width: calc(10 / 32 * 1em);
+  height: calc(10 / 32 * 1em);
+  border-radius: 50%;
+  background-color: #c2c2c2;
+  box-shadow: 0 0 0 calc(5 / 32 * 1em) var(--grey-lightest);
+}
+
+.item:first-child::after {
+  background-color: var(--theme);
+  box-shadow: 0 0 0 calc(5 / 32 * 1em) #fedddf;
+}
+
+.msg {
+  margin-bottom: calc(14 / 24 * 1em);
+  font-size: calc(24 / 32 * 1em);
+}
+
+.item:first-child > .msg {
+  color: var(--theme);
+}
+
+.time {
+  display: block;
+  font-size: calc(20 / 32 * 1em);
+}

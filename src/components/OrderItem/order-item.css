@@ -1,0 +1,110 @@
+@import 'styles/vars.css';
+
+:root {
+  --icon-size: calc(30 / 32 * 1em);
+}
+
+.wrapper {
+  padding: 0 calc(20 / 32 * 1em);
+  margin-top: calc(20 / 32 * 1em);
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: calc(68 / 32 * 1em);
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150%;
+  height: 1px;
+  background-color: var(--grey-lightest);
+}
+
+.icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin-right: calc(10 / 32 * 1em);
+  fill: var(--grey-lighter);
+}
+
+.title {
+  flex: 1;
+  margin: 0;
+  font-size: calc(24 / 32 * 1em);
+  font-weight: normal;
+}
+
+.state {
+  color: var(--theme);
+  font-size: calc(24 / 32 * 1em);
+}
+
+.list {
+  @apply --unstyle-list;
+
+  position: relative;
+  padding: calc(10 / 32 * 1em) 0;
+  background-color: #fff;
+  font-size: 1rem;
+  line-height: calc(34 / 24);
+}
+
+.list::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150%;
+  height: 1px;
+  background-color: var(--grey-lightest);
+}
+
+.item:not(:last-child) {
+  margin-bottom: calc(24 / 32 * 1em);
+}
+
+.link {
+  display: flex;
+  font-size: calc(24 / 32 * 1em);
+}
+
+.pic {
+  width: calc(130 / 24 * 1em);
+  height: calc(130 / 24 * 1em);
+  margin-right: calc(20 / 24 * 1em);
+}
+
+.content {
+  flex: 1;
+  margin-right: calc(32 / 24 * 1em);
+}
+
+.name {
+  margin: 0 0 calc(10 / 24 * 1em);
+  font-size: inherit;
+  font-weight: normal;
+}
+
+.detail {
+  color: var(--grey-lighter);
+}
+
+.item-right {
+  text-align: right;
+}
+
+.price {
+  color: var(--theme);
+}
+
+.count {
+  color: var(--grey-lighter);
+}

@@ -1,0 +1,150 @@
+@import 'styles/vars.css';
+
+:root {
+  --header-padding-top: calc(40 / 32 * 1em);
+  --header-padding-right: calc(30 / 32 * 1em);
+  --header-content-height: calc((128 - 40) / 32 * 1em);
+  --header-btn-min-width: calc(80 / 32 * 1em);
+  --align-center: {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.header {
+  position: relative;
+  display: none;
+  height: calc(88 / 32 * 1em);
+  padding: 0 var(--header-padding-right);
+  border-bottom: 1px solid var(--grey-lightest);
+  background-color: #fff;
+}
+
+.header-btn {
+  @apply --flex-center;
+
+  min-width: var(--header-btn-min-width);
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.header-btn-action {
+  composes: header-btn;
+  color: var(--theme);
+}
+
+.header-btn-action[disabled] {
+  color: var(--grey-lighter);
+}
+
+/* 标题 */
+.title {
+  @apply --flex-center;
+
+  flex: 1;
+  margin: 0;
+  font-size: calc(32 / 32 * 1em);
+}
+
+/* 返回 */
+.return {
+  @apply --align-center;
+
+  flex-basis: var(--header-btn-min-width);
+  visibility: hidden;
+}
+
+.return-svg {
+  fill: currentColor;
+  width: 1.1em;
+  height: 1.1em;
+  transform: translateY(10%); /* 视觉对齐 */
+}
+
+/* 菜单 */
+.menu {
+  @apply --align-center;
+
+  position: relative;
+  color: #fff;
+}
+
+.menu > .header-btn {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-svg {
+  fill: currentColor;
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.wrapper {
+  position: absolute;
+  top: 120%;
+  right: 10%;
+  z-index: 4;  /* 大多数情况下，页面里的其它z-index都要小于这个值，遮罩层大于这个值 */
+  width: calc(240 / 32 * 1em);
+  border-radius: 3px;
+  background-color: #414649;
+  transform: translateY(-5%) scaleY(0.5);
+  transform-origin: center top;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.wrapper-active {
+  composes: wrapper;
+  transform: translateY(0) scaleY(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 10%;
+  transform: translateY(-100%);
+  border-width: calc(12 / 32 * 1em);
+  border-top-width: 0;
+  border-style: solid;
+  border-color: transparent transparent #414649;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: calc(28 / 32 * 1em);
+}
+
+.list-item:not(:last-child) {
+  border-bottom: 1px solid #696d70;
+}
+
+.item-link {
+  display: flex;
+  align-items: center;
+  padding: calc(28 / 32 * 1em);
+}
+
+.item-svg {
+  fill: currentColor;
+  margin-right: 0.8em;
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.item-svg-ajust {
+  composes: item-svg;
+  transform: scale(1.1);
+}
+
+/* 右侧占位符 */
+.empty {
+  flex-basis: var(--header-btn-min-width);
+}

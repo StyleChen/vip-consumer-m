@@ -1,0 +1,243 @@
+@import 'styles/vars.css';
+
+.order-detail::after {
+  display: block;
+  content: "";
+  height: calc(98 / 32 * 1em);
+}
+
+/* 物流、收货人 */
+.container {
+  display: flex;
+  padding: calc(20 / 32 * 1em);
+  margin-top: calc(16 / 32 * 1em);
+  background-color: #fff;
+}
+
+.icon {
+  margin-top: calc(10 / 32 * 1em); /* 视觉误差 */
+  margin-right: calc(10 / 32 * 1em);
+  fill: var(--grey-lighter);
+}
+
+.content {
+  flex: 1;
+  font-size: calc(24 / 32 * 1em);
+  line-height: calc(40 / 24);
+  color: var(--grey-lighter);
+}
+
+.title {
+  font-size: calc(28 / 24 * 1em);
+  color: #333;
+}
+
+.arrow {
+  align-self: center;
+  fill: var(--grey-lighter);
+}
+
+/* 订单内容 */
+.order-footer {
+  @apply --unstyle-list;
+
+  padding: calc(10 / 24 * 1em) 0 calc(20 / 24 * 1em);
+  background-color: #fff;
+  font-size: calc(24 / 32 * 1em);
+  line-height: calc(40 / 24);
+}
+
+.order-footer-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-footer-label {
+  color: var(--grey-lighter);
+}
+
+.order-footer-total {
+  color: var(--theme);
+}
+
+/* 底栏 */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0 calc(20 / 32 * 1em);
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.footer > button {
+  margin-top: calc(24 / 32 * 1rem);
+  margin-bottom: calc(24 / 32 * 1rem);
+}
+
+/* 会员支付框 */
+.vip-pay {
+  position: fixed;
+  z-index: 9;
+  left: 50%;
+  top: 20%;
+  width: calc(550 / 32 * 1em);
+  background: white;
+  border-radius: 5px;
+  transform: translateX(-50%);
+}
+
+.vip-pay-head {
+  line-height: calc(90 / 30 * 1em);
+  height: calc(90 / 30 * 1em);
+  border-bottom: solid 1px #eee;
+  font-size: calc(30 / 32 * 1em);
+  text-align: center;
+  color: #333;
+}
+
+.icon-close {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 16px;
+  height: 16px;
+  fill: var(--grey-lighter);
+}
+
+.vip-pay-body {
+  padding: calc(30 / 50 * 1em) 0;
+  margin: 0 calc(20 / 50 * 1em);
+  border-bottom: 1px solid #eee;
+  font-size: calc(50 / 32 * 1em);
+  text-align: center;
+}
+
+.vip-pay-foot > ul {
+  @apply --unstyle-list;
+
+  display: flex;
+  margin: calc(20 / 32 * 1em);
+  border: 1px solid #eee;
+  border-radius: calc(20 / 32 * 1em);
+}
+
+.vip-pay-foot > ul > li {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(85 / 32 * 1em);
+}
+
+.vip-pay-foot > ul > li:not(:last-child) {
+  border-right: 1px solid #eee;
+}
+
+.forget {
+  margin: 0 calc(30 / 24 * 1em) calc(30 / 24 * 1em);
+  text-align: right;
+  font-size: calc(24 / 32 * 1em);
+  color: var(--theme);
+}
+
+.vip-pay-foot > input[type=password] {
+  position: absolute;
+  width: 150%;
+  height: calc(120 / 32 * 1em);
+  opacity: 0;
+  transform: translate(-8.5em, -7.5em);
+}
+
+.pay-wraper {
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 calc(44 / 32 * 1em);
+  background: white;
+}
+
+.pay-text {
+  flex-basis: calc(110 / 28 * 1em);
+  font-size: calc(28 / 32 * 1em);
+  line-height: calc(110 / 28 * 1em);
+  text-align: center;
+}
+
+.pay-text > span {
+  font-size: calc(30 / 28 * 1em);
+  color: var(--theme);
+}
+
+.pay-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: calc(88 / 32 * 1em);
+  margin-bottom: calc(22 / 32 * 1em);
+  border-radius: 5px;
+  background-color: #c2c2c2;
+  color: white;
+}
+
+.pay-mode {
+  background: white;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.pay-mode > img {
+  width: calc(50 / 32 * 1em);
+  margin-right: calc(10 / 32 * 1em);
+}
+
+.pay-mode:nth-of-type(2) {
+  border-color: #41ba42;
+  color: #41ba42;
+}
+
+.pay-mode:nth-of-type(3) {
+  border-color: var(--theme);
+  color: var(--theme);
+}
+
+/* 物流跟踪 */
+.logistics {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: calc(900 / 32 * 1em);
+  bottom: 0;
+  left: 0;
+  padding: calc(30 / 32 * 1em);
+  border-top: calc(4 / 32 * 1em) solid var(--theme);
+  background-color: white;
+}
+
+.log-title {
+  padding-bottom: calc(20 / 32 * 1em);
+  margin-top: 0;
+  border-bottom: calc(2 / 32 * 1em) solid var(--grey-lighter);
+  font-size: calc(32 / 32 * 1em);
+}
+
+.log-title > svg {
+  width: calc(50 / 32 * 1em);
+  height: calc(50 / 32 * 1em);
+  top: calc(24 / 32 * 1em);
+}
+
+.log-number {
+  color: var(--grey-lighter);
+}
+
+.allmap {
+  width: 100%;
+  height: calc(750 / 32 * 1em);
+}

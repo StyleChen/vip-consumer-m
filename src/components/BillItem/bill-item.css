@@ -1,0 +1,86 @@
+@import 'styles/vars.css';
+
+:root {
+  --title-height: calc(64 / 28 * 1em);
+  --logo-size: calc(80 / 28 * 1em);
+  --padding: calc(20 / 28 * 1em);
+}
+
+.item {
+  font-size: 1rem;
+}
+
+.title {
+  height: var(--title-height);
+  padding: 0 var(--padding);
+  margin: 0;
+  font-size: calc(28 / 32 * 1em);
+  font-weight: normal;
+  line-height: var(--title-height);
+}
+
+.entry-list {
+  @apply --unstyle-list;
+}
+
+.entry {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: var(--padding);
+  background-color: #fff;
+  overflow: hidden;
+  font-size: calc(28 / 32 * 1em);
+}
+
+.entry:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: var(--padding);
+  width: 100%;
+  height: 1px;
+  background-color: var(--grey-lightest);
+}
+
+.logo {
+  width: var(--logo-size);
+  height: var(--logo-size);
+  border-radius: 50%;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  margin-left: calc(20 / 28 * 1em);
+}
+
+.info {
+  @apply --ellipsis;
+
+  margin: 0;
+  font-size: calc(30 / 28 * 1em);
+  font-weight: normal;
+}
+
+.time {
+  display: block;
+  margin-top: calc(16 / 24 * 1em);
+  font-size: calc(24 / 28 * 1em);
+  color: var(--grey-lighter);
+}
+
+.money {
+  margin-left: calc(20 / 30 * 1em);
+  font-size: calc(30 / 28 * 1em);
+}
+
+.money-positive {
+  composes: money;
+  color: #8cc051;
+}
+
+.money-negative {
+  composes: money;
+  color: var(--theme);
+}

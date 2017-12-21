@@ -1,0 +1,194 @@
+@import 'styles/vars.css';
+
+:root {
+  --card-padding: calc(30 / 32 * 1em);
+  --logo-size: calc(100 / 32 * 1em);
+  --transparent-color: rgba(255, 255, 255, 0.7);
+}
+
+/* card */
+.card {
+  position: relative;
+  height: calc(400 / 32 * 1em);
+  padding: var(--card-padding);
+  margin: calc(20 / 32 * 1em) 0;
+  background-size: 100% 100%;
+  background-image: url('./images/付款@2x.png');
+  color: #fff;
+}
+
+/* .card[data-index="1"] {
+  background-image: url('./images/vip-card-01.png');
+}
+
+.card[data-index="2"] {
+  background-image: url('./images/vip-card-02.png');
+}
+
+.card[data-index="3"] {
+  background-image: url('./images/vip-card-03.png');
+} */
+
+/* card top */
+.cardTop {
+  display: flex;
+  align-items: flex-end;
+  padding-left: var(--card-padding);
+}
+
+.logo {
+  width: var(--logo-size);
+  height: var(--logo-size);
+  border-radius: 50%;
+  margin-right: calc(20 / 32 * 1em);
+  overflow: hidden;
+}
+
+.name {
+  margin: 0;
+  font-size: calc(32 / 32 * 1em);
+  font-weight: normal;
+}
+
+.number {
+  margin-top: calc(10 / 28 * 1em);
+  color: var(--transparent-color);
+  font-size: calc(28 / 32 * 1em);
+}
+
+.pay {
+  position: absolute;
+  top: calc(40 / 32 * 1em);
+  right: var(--card-padding);
+  width: 10.14493%; /* calc(70 / 690 * 100) 图标宽度除以卡的宽度 */
+  height: calc(70 / 32 * 1em);
+  opacity: 0;
+}
+
+/* card bottom */
+.card-bottom {
+  position: absolute;
+  bottom: calc(120 / 32 * 1em);
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 calc(2 * var(--card-padding));
+}
+
+.card-footer {
+  position: absolute;
+  display: flex;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(92 / 32 * 1em);
+}
+
+.card-footer > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: var(--dark);
+  font-size: calc(30 / 32 * 1em);
+}
+
+.money {
+  color: var(--transparent-color);
+  font-size: calc(24 / 32 * 1em);
+}
+
+.balance {
+  color: #fff;
+  font-size: calc(30 / 24 * 1em);
+}
+
+.money-detail {
+  margin-top: calc(20 / 24 * 1em);
+}
+
+.eyes {
+  fill: var(--grey-bg);
+  transform: scale(1.2);
+}
+
+/* list */
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon {
+  width: calc(40 / 30 * 1em);
+  height: calc(40 / 30 * 1em);
+  margin-right: calc(30 / 32 * 1em);
+}
+
+.icon[data-color="yellow"] {
+  fill: #f5bd42;
+}
+
+.icon[data-color="theme"] {
+  fill: var(--theme);
+}
+
+.icon[data-color="blue"] {
+  fill: #5c9dec;
+}
+
+.icon[data-color="orange"] {
+  fill: #fb6f51;
+}
+
+.icon[data-color="green"] {
+  fill: #8cc250;
+}
+
+.icon[data-color="purple"] {
+  fill: #b381de;
+}
+
+.icon[data-type=顶栏] {
+  margin-right: 0.5em;
+}
+
+.icon[data-id=user] {
+  transform: scale(1.5);
+}
+
+/* 联系客服 */
+.service {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 6;
+  width: 100%;
+  background-color: #fff;
+  font-size: calc(30 / 32 * 1em);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.service-active {
+  composes: service;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.service-phone {
+  display: block;
+  height: calc(100 / 30 * 1em);
+  border-bottom: 2px solid var(--grey-lightest);
+  font-style: normal;
+  line-height: calc((100 -2) / 30);
+  text-align: center;
+}
+
+.service-btn {
+  width: 100%;
+  height: calc(100 / 30 * 1em);
+  border: 0;
+  background-color: #fff;
+}

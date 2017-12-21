@@ -1,0 +1,85 @@
+@import "styles/vars.css";
+
+:root {
+  --code-send-padding: calc(32 / 30 * 1em);
+  --title-height: calc(90 / 28 * 1em);
+}
+
+.input-wrapper {
+  margin-top: calc(20 / 32 * 1em);
+}
+
+.code-input {
+  display: flex;
+}
+
+.code-send {
+  display: flex;
+  align-items: center;
+  padding-right: var(--code-send-padding);
+  border: 0;
+  margin-top: 1px; /* 与输入框对齐 */
+  background-color: #fff;
+  font-size: calc(30 / 32 * 1em);
+  color: var(--theme);
+}
+
+.code-send[disabled] {
+  color: var(--grey-lighter);
+}
+
+.code-send::before {
+  content: "";
+  width: 1px;
+  height: calc(50 / 30 * 1em);
+  background-color: var(--grey-lightest);
+  margin-right: var(--code-send-padding);
+}
+
+.title {
+  height: var(--title-height);
+  margin: 0;
+  font-size: calc(28 / 32 * 1em);
+  font-weight: normal;
+  line-height: var(--title-height);
+  text-align: center;
+}
+
+.title-highlight {
+  color: var(--theme);
+}
+
+.error {
+  padding-left: calc(34 / 24 * 1em);
+  margin-top: 1em;
+  color: var(--theme);
+  font-size: calc(24 / 32 * 1em);
+}
+
+.content-wrapper {
+  margin-top: 7em;
+  text-align: center;
+}
+
+.big-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--grey);
+}
+
+.icon {
+  fill: var(--theme);
+  margin-right: 0.5em;
+  transform: scale(1.2);
+}
+
+.tip {
+  color: var(--grey-lighter);
+  font-size: 15px;
+}
+
+.tip > span,
+.tip > a {
+  color: var(--theme);
+}
+

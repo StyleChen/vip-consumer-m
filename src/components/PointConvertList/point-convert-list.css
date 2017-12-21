@@ -1,0 +1,29 @@
+@import 'styles/vars.css';
+
+/* 积分兑换 */
+.list {
+  @apply --unstyle-list;
+
+  overflow: hidden;
+}
+
+/* 隐藏边框最后一个条目的下边框 */
+.list > :last-child {
+  margin-bottom: -1px;
+}
+
+.item {
+  background-color: #fff;
+}
+
+.item-point {
+  margin-top: calc(20 / 24 * 1em);
+  font-size: calc(24 / 28 * 1em);
+  color: var(--theme);
+}
+
+.item-point-number {
+  margin-right: 0.25em;
+  font-size: calc(36 / 24 * 1em);
+  font-weight: normal;
+}

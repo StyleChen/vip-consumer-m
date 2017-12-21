@@ -1,0 +1,180 @@
+@import "styles/vars.css";
+
+:root {
+  --wx-color: #41ba42;
+  --ali-color: #00a0e9;
+}
+
+.banner {
+  height: calc(130 / 32 * 1em);
+  margin-bottom: calc(20 / 32 * 1em);
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.money {
+  padding: calc(20 / 32 * 1em) calc(20 / 32 * 1em) calc(40 / 32 * 1em);
+  margin-bottom: calc(70 / 32 * 1em);
+  background-color: #fff;
+}
+
+.input-box {
+  position: relative;
+}
+
+.input-svg {
+  position: absolute;
+  top: calc(25 / 28 * 1em);
+  right: calc(20 / 28 * 1em);
+  width: calc(30 / 28 * 1em);
+  height: calc(30 / 28 * 1em);
+  padding: calc(5 / 28 * 1em);
+  border-radius: 50%;
+  font-size: calc(28 / 32 * 1em);
+  fill: #fff;
+  background-color: #c2c2c2;
+}
+
+.money-input {
+  width: 100%;
+  height: calc(80 / 28 * 1em);
+  padding: 0 calc(20 / 28 * 1em);
+  border: 1px solid var(--grey-bg);
+  border-radius: 2px;
+  background-color: var(--grey-bg);
+  font-size: calc(28 / 32 * 1em);
+}
+
+.money-text {
+  display: block;
+  margin-top: calc(16 / 24 * 1em);
+  color: var(--grey-lighter);
+  font-size: calc(24 / 32 * 1em);
+}
+
+.money-text > em {
+  color: var(--theme);
+  font-style: normal;
+}
+
+.money-select {
+  @apply --unstyle-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-top: calc(50 / 32 * 1em); */
+}
+
+.money-item {
+  /* flex: 1; */
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(124 / 32 * 1em);
+  border: 1px solid var(--grey-lightest);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.money-item-active {
+  composes: money-item;
+  border-color: var(--theme);
+  color: var(--theme);
+}
+
+.money-item:not(:nth-child(3n)) {
+  margin-right: calc(26 / 32 * 1em);
+}
+
+.money-item:nth-child(n + 4) {
+  margin-top: calc(20 / 32 * 1em);
+}
+
+.amount {
+  font-size: calc(30 / 32 * 1em);
+  margin-bottom: calc(16 / 30 * 1em);
+}
+
+.perk {
+  font-size: calc(24 / 32 * 1em);
+  color: var(--theme);
+}
+
+.agreement {
+  display: block;
+  margin-top: calc(20 / 24 * 1em);
+  color: var(--grey-lighter);
+  font-size: calc(24 / 32 * 1em);
+  text-align: center;
+}
+
+.agreement a {
+  color: var(--theme);
+}
+
+/* 支付方式 */
+.payment {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 6;
+  width: 100%;
+  padding: 0 calc(50 / 32 * 1em);
+  background-color: #fff;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.payment-active {
+  composes: payment;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.payment-info {
+  height: calc(110 / 28 * 1em);
+  line-height: calc(110 / 28);
+  font-size: calc(28 / 32 * 1em);
+  text-align: center;
+}
+
+.payment-money {
+  color: var(--theme);
+  font-size: calc(32 / 28 * 1em);
+  font-style: normal;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  height: calc(88 / 30 * 1em);
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  margin-bottom: calc(28 / 30 * 1em);
+  background-color: #fff;
+  font-size: calc(30 / 32 * 1em);
+}
+
+.btn-wx {
+  composes: btn;
+  color: var(--wx-color);
+}
+
+.btn-ali {
+  composes: btn;
+  color: var(--ali-color);
+}
+
+.btn-cancle {
+  composes: btn;
+  border: 0;
+  background-color: #c2c2c2;
+  color: #fff;
+}

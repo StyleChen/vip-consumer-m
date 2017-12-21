@@ -1,0 +1,56 @@
+@import "styles/vars.css";
+
+.address {
+  padding: 0 calc(30 / 32 * 1em) calc(10 / 32 * 1em);
+  background-color: #fff;
+}
+
+.address-label {
+  display: block;
+  font-size: calc(30 / 32 * 1em);
+  line-height: calc(90 / 30);
+}
+
+.address-input {
+  width: 100%;
+  height: calc((28 + 14) * 2 / 28 * 1em);
+  padding: 0;
+  border: 0;
+  font-size: calc(28 / 32 * 1em);
+  line-height: calc((28 + 14) / 28);
+}
+
+.set-default > label {
+  display: flex;
+  align-items: center;
+  border: 0;
+  margin-top: calc(20 / 28 * 1em);
+  margin-left: calc(20 / 28 * 1em);
+  background-color: transparent;
+  color: var(--grey-lighter);
+  font-size: calc(28 / 32 * 1em);
+}
+
+.set-default > input {
+  display: none;
+}
+
+.check-icon {
+  display: inline-block;
+  width: calc(30 / 28 * 1em);
+  height: calc(30 / 28 * 1em);
+  border: 1px solid #bbb;
+  border-radius: 50%;
+  margin-right: calc(10 / 28 * 1em);
+  fill: transparent;
+}
+
+:checked + label > .check-icon {
+  border: 0;
+  fill: var(--theme);
+  transform: scale(1.2);
+}
+
+.modal-btn {
+  color: var(--theme) !important;
+}

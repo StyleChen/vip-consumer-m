@@ -1,0 +1,20 @@
+@import 'styles/vars.css';
+
+.list {
+  @apply --unstyle-list;
+}
+
+.item {
+  margin-top: calc(16 / 32 * 1em);
+  background-color: #fff;
+}
+
+.item-footer {
+  padding: calc(16 / 24 * 1em);
+  text-align: right;
+}
+
+.stat {
+  color: var(--grey-lighter);
+  font-size: calc(24 / 32 * 1em);
+}

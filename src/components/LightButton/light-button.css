@@ -1,0 +1,17 @@
+@import 'styles/vars.css';
+
+.button {
+  width: calc(150 / 24 * 1em);
+  height: calc(50 / 24 * 1em);
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  margin-left: calc(20 / 24 * 1em);
+  background-color: #fff;
+  font-size: calc(24 / 32 * 1rem);
+}
+
+.button-theme {
+  composes: button;
+  border-color: currentColor;
+  color: var(--theme);
+}
